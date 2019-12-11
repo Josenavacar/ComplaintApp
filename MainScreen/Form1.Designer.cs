@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.lbComplaints = new System.Windows.Forms.ListBox();
             this.lbStudentClean = new System.Windows.Forms.Label();
             this.lbStudentGarbage = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -86,7 +88,6 @@
             this.lbGroceries.Name = "lbGroceries";
             this.lbGroceries.Size = new System.Drawing.Size(517, 225);
             this.lbGroceries.TabIndex = 4;
-            this.lbGroceries.SelectedIndexChanged += new System.EventHandler(this.x);
             // 
             // lbNonpaid
             // 
@@ -118,11 +119,17 @@
             // 
             this.lbStudentGarbage.AutoSize = true;
             this.lbStudentGarbage.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lbStudentGarbage.Location = new System.Drawing.Point(132, 454);
+            this.lbStudentGarbage.Location = new System.Drawing.Point(132, 449);
             this.lbStudentGarbage.Name = "lbStudentGarbage";
             this.lbStudentGarbage.Size = new System.Drawing.Size(71, 26);
             this.lbStudentGarbage.TabIndex = 8;
             this.lbStudentGarbage.Text = "Name";
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 5000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Form1
             // 
@@ -140,6 +147,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,6 +164,7 @@
         private System.Windows.Forms.ListBox lbComplaints;
         private System.Windows.Forms.Label lbStudentClean;
         private System.Windows.Forms.Label lbStudentGarbage;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
