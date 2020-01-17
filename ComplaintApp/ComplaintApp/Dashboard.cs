@@ -21,27 +21,20 @@ namespace ComplaintApp
     public partial class Dashboard : DevExpress.XtraEditors.XtraForm
     {
        
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataReader dr;
-        string time = DateTime.Now.ToString("HH:mm");
-        string date = DateTime.Now.ToString("dd/MM/yyyy");
-        int i = 0;
-        int seconder = 0;
-        int student_id;
-        int rows_num;
-        Int32 count;
-        Int32 count1;
-        int on_duty_today;
-        int s_complaints;
-        int nr_notcleaned;
-        int nr_notpaid;
-        int nr_paid;
-        int money_paid;
-        List<string> HouseRules = new List<string>();
+        private MySqlConnection con;
+        private MySqlCommand cmd;
+        private MySqlDataReader dr;
+        private string time = DateTime.Now.ToString("HH:mm");
+        private string date = DateTime.Now.ToString("dd/MM/yyyy");
+        private int i = 0;
+        private int seconder = 0;
+        private int student_id, on_duty_today, s_complaints, nr_notcleaned, nr_notpaid, nr_paid, money_paid;
+        private Int32 count, count1;
+        private List<string> HouseRules;
+
         public Dashboard()
         {
-
+            HouseRules = new List<string>();
             InitializeComponent();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "The Bezier";
             UpdateAll();
@@ -408,11 +401,6 @@ namespace ComplaintApp
             con.Close();
 
             MessageBox.Show("Complaint placed");
-        }
-
-        private void xtraTabControl1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void UpdateComplains()

@@ -148,7 +148,6 @@
             this.xtraTabPage5,
             this.xtraTabPage6,
             this.xtraTabPage3});
-            this.xtraTabControl1.Click += new System.EventHandler(this.xtraTabControl1_Click);
             // 
             // xtraTabPage1
             // 
