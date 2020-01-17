@@ -18,9 +18,10 @@ namespace ComplaintApp
 {
     public partial class RegisterForm : DevExpress.XtraEditors.XtraForm
     {
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataReader dr;
+        private MySqlConnection con;
+        private MySqlCommand cmd;
+        private MySqlDataReader dr;
+
         public RegisterForm()
         {
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "The Bezier";

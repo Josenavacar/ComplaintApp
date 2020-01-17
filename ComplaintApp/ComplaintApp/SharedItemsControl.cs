@@ -18,13 +18,15 @@ namespace ComplaintApp
 {
     public partial class SharedItemsControl : DevExpress.XtraEditors.XtraForm
     {
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataReader dr;
+        private MySqlConnection con;
+        private MySqlCommand cmd;
+        private MySqlDataReader dr;
         public static Dashboard Form;
-        Dashboard Dashboard = new Dashboard();
+        private Dashboard Dashboard;
+
         public SharedItemsControl()
         {
+            Dashboard = new Dashboard();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "The Bezier";
             InitializeComponent();
             UpdateListBox1();

@@ -18,9 +18,10 @@ namespace ComplaintApp
      
     public partial class InsertKey : DevExpress.XtraEditors.XtraForm
     {
-        MySqlConnection con;
-        MySqlCommand cmd,cmd1;
-        MySqlDataReader dr,dr1;
+        private MySqlConnection con;
+        private MySqlCommand cmd;
+        private MySqlDataReader dr;
+
         public static string Key_Number;
         private void InsertKey_FormClosed(object sender, FormClosedEventArgs e)
         {

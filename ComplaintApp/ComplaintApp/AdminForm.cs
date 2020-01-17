@@ -18,9 +18,10 @@ namespace ComplaintApp
 {
     public partial class AdminForm : DevExpress.XtraEditors.XtraForm
     {
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataReader dr;
+        private MySqlConnection con;
+        private MySqlCommand cmd;
+        private MySqlDataReader dr;
+
         public AdminForm()
         {
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "The Bezier";
@@ -51,44 +52,6 @@ namespace ComplaintApp
             }
             con.Close();
         }
-
-       /* private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            string password = Login.Encrypt(textEdit2.Text, "sblw-3hn8-sqoy19");
-            cmd = new MySqlCommand();
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = $"INSERT INTO users (username,password) VALUES ('{textEdit1.Text}','{password}')";
-            dr = cmd.ExecuteReader();
-            //MessageBox.Show("Added","Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            textEdit1.Text = String.Empty;
-            textEdit2.Text = String.Empty;
-            con.Close();
-            UpdateGrid();
-        }*/
-
-      /*  private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cmd = new MySqlCommand();
-                con.Open();
-                cmd.Connection = con;
-                cmd.CommandText = $"DELETE FROM users WHERE username='{textEdit3.Text}'";
-                dr = cmd.ExecuteReader();
-                //MessageBox.Show("Deleted","Info",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                textEdit3.Text = String.Empty;
-            }
-            catch(MySqlException ex)
-            {
-
-                MessageBox.Show($"Error: \r\n{0} { ex.ToString()}","Error",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            cmd.Connection.Close();
-
-
-        }*/
-
      
         private void UpdateGrid1()
         {
